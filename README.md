@@ -1,1 +1,1 @@
-Dummy repository.
+Testing branch of Dummy repository.
