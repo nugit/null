@@ -1,0 +1,3 @@
+steps:
+- name: 'us.gcr.io/massive-team-793/python3.6'
+  args: ['cat', 'README.md']
