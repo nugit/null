@@ -12,3 +12,7 @@ steps:
   - 'chmod +x cloudbuild/entrypoint.sh && cloudbuild/entrypoint.sh'
   env:
   - 'PGUSER=root'
+- name: 'us.gcr.io/massive-team-793/python3.6'
+  args: ['pip', 'install', '-r', 'cloudbuild/requirements.txt']
+- name: 'us.gcr.io/massive-team-793/python3.6'
+  args: ['python', 'index.py']
