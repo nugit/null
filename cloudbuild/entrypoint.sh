@@ -6,5 +6,5 @@
 
 set -x && set -e
 
-pip install -r requirements.txt
-python ../index.py
+pip install -r cloudbuild/requirements.txt
+python index.py
