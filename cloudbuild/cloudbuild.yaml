@@ -9,6 +9,6 @@ steps:
   entrypoint: /bin/sh
   args:
   - '-c'
-  - 'chmod +x cloudbuild/entrypoint.sh && cloudbuild/entrypoint.sh'
+  - 'pwd && whoami && chmod +x cloudbuild/entrypoint.sh && cloudbuild/entrypoint.sh'
   env:
   - 'PGUSER=root'
