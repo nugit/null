@@ -1,15 +1,20 @@
 #!/usr/bin/python
 import psycopg2
+import os
  
 def connect():
     """ Connect to the PostgreSQL database server """
     conn = None
+    host = os.environ.get('PGHOST', 'postgres')
+    user = os.environ.get('PGUSER', 'root')
+
     try:
         # read connection parameters
+
         params = {
-            "host": "localhost",
+            "host": host,
             "database": "bobby_test",
-            "user": "root"
+            "user": user
         }
  
         # connect to the PostgreSQL server
@@ -40,3 +45,4 @@ def connect():
  
 if __name__ == '__main__':
     connect()
+          

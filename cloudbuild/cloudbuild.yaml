@@ -9,6 +9,7 @@ steps:
   entrypoint: /bin/sh
   args:
   - '-c'
-  - 'pwd && whoami && chmod +x cloudbuild/entrypoint.sh && cloudbuild/entrypoint.sh'
+  - 'chmod +x cloudbuild/entrypoint.sh && cloudbuild/entrypoint.sh'
   env:
+  - 'PGHOST=postgres'
   - 'PGUSER=root'
