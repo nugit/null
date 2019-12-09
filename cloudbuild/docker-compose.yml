@@ -2,15 +2,13 @@ version: '3'
 services:
   rabbitmq:
     image: 'rabbitmq:3.7.22-alpine'
-    networks:
-      cloudbuild
+    networks: cloudbuild
     container_name: rabbit
     ports:
       - 5672:5672
   redis:
     image: 'redis:5.0-alpine'
-    networks:
-      cloudbuild
+    networks: cloudbuild
     container_name: redis-server
     ports:
      - 6379:6379
