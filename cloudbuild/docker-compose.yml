@@ -1,11 +1,16 @@
 version: '3'
 services:
-  postgres:
-    image: postgres:9.6.2-alpine
-    network_mode: cloudbuild
-    container_name: postgres
+  rabbitmq:
+    image: 'rabbitmq:3.7.22-alpine'
+    networks:
+      cloudbuild
+    container_name: rabbit
     ports:
-      - 5432:5432
-    environment:
-      POSTGRES_USER: root
-      POSTGRES_DB: bobby_test
+      - 5672:5672
+  redis:
+    image: 'redis:5.0-alpine'
+    networks:
+      cloudbuild
+    container_name: redis-server
+    ports:
+     - 6379:6379

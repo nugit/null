@@ -5,11 +5,8 @@ steps:
   - 'cloudbuild/docker-compose.yml'
   - 'up'
   - '-d'
-- name: 'us.gcr.io/massive-team-793/python3.6'
+- name: 'node:12.10.0-slim'
   entrypoint: /bin/sh
   args:
   - '-c'
   - 'chmod +x cloudbuild/entrypoint.sh && cloudbuild/entrypoint.sh'
-  env:
-  - 'PGHOST=postgres'
-  - 'PGUSER=root'

@@ -4,7 +4,8 @@
 # Run Innovation CI process
 #
 
-set -x && set -e
+set -ex
 
-pip install -r cloudbuild/requirements.txt
-python index.py
+node index.js
+# pip install -r cloudbuild/requirements.txt
+# python index.py
