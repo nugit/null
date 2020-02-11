@@ -7,5 +7,7 @@ steps:
   - --destination=us.gcr.io/$PROJECT_ID/cloudbuild/dummy
   - --cache=true
 - name: 'us.gcr.io/$PROJECT_ID/cloudbuild/dummy'
+  dir: '/usr/src/app'
   entrypoint: yarn
   args: ['lint']
+
