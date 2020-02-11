@@ -1,12 +1,11 @@
 steps:
-- name: 'docker/compose:1.15.0'
-  args: 
-  - '-f'
-  - 'cloudbuild/docker-compose.yml'
-  - 'up'
-  - '-d'
-- name: 'node:12.10.0-slim'
-  entrypoint: /bin/sh
+steps:
+- name: 'gcr.io/kaniko-project/executor:latest'
+  id: 'setup'
   args:
-  - '-c'
-  - 'chmod +x cloudbuild/entrypoint.sh && cloudbuild/entrypoint.sh'
+  - --dockerfile=cloudbuild/Dockerfile
+  - --destination=us.gcr.io/$PROJECT_ID/cloudbuild/dummy
+  - --cache=true
+- name: 'us.gcr.io/$PROJECT_ID/cloudbuild/dummy'
+  entrypoint: yarn
+  args: ['lint']
