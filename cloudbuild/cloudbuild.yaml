@@ -8,4 +8,4 @@ steps:
   - --cache=true
 - name: 'us.gcr.io/$PROJECT_ID/cloudbuild/dummy'
   entrypoint: yarn
-  args: ['lint']
+  args: ['list']
